@@ -44,6 +44,14 @@ cards.forEach((card) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft") { angle += 60; rotateCarousel(); updateActiveCard(); }
-  if (e.key === "ArrowRight") { angle -= 60; rotateCarousel(); updateActiveCard(); }
+  if (e.key === "ArrowLeft") {
+    angle += 60;
+    rotateCarousel();
+    updateActiveCard();
+  }
+  if (e.key === "ArrowRight") {
+    angle -= 60;
+    rotateCarousel();
+    updateActiveCard();
+  }
 });
