@@ -1,6 +1,10 @@
-main {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
   font-family: Arial, sans-serif;
   display: flex;
   height: 100vh;
@@ -25,6 +29,8 @@ main {
   position: relative;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .card {
@@ -35,7 +41,13 @@ main {
   top: 50%;
   left: 50%;
   transform-style: preserve-3d;
-  transform: rotateY(var(--x, 0deg)) translateZ(400px) translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotateY(var(--x)) translateZ(400px);
+}
+
+.card.active {
+  transform: translate(-50%, -50%) rotateY(var(--x)) translateZ(450px) scale(1.1);
+  z-index: 10;
+  filter: drop-shadow(0 20px 30px rgba(139, 80, 240, 0.5));
 }
 
 .card img {
